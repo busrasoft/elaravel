@@ -59,3 +59,18 @@ Route::get('newpage/{name}/{uppercase}', function($name, $uppercase) {
 Route::get('post', function() {
     return view('routeName');
 })->name('homepage');
+
+Route::get('/page', 'PageController@index');
+Route::get('/show', 'PageController@show');
+
+Route::group(['namespace'=>'Backend'],function(){
+    Route::get('/table1', 'Table1Controller@index')->name('backend.table1');
+    Route::get('/table2', 'Table2Controller@index');
+    Route::get('/table3', 'Table3Controller@index');
+    Route::get('/table3/{name}/{lastname}', 'Table3Controller@index');
+    Route::get('/invoke', 'SingleController');
+        
+});
+
+
+Route::get('/product', 'Frontend\ProductController@index');
