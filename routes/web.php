@@ -28,7 +28,7 @@ Route::match(['get', 'post'], 'post', function() {
     return view('newpage');
 });
 
-Route::any('post', function() {
+Route::any('post', function() {sadf
     return view('newpage');
 });
 */
