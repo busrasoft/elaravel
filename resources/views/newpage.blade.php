@@ -1,4 +1,6 @@
 <h1>Metodlar</h1>
+
+
 <p>Method :
 <?php echo $_SERVER['REQUEST_METHOD']; ?>
  </p>
