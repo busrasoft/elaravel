@@ -74,3 +74,11 @@ Route::group(['namespace'=>'Backend'],function(){
 
 
 Route::get('/product', 'Frontend\ProductController@index');
+
+Route::get('frontend', function() {
+    return view('frontend.index');
+});
+
+Route::get('backend', function() {
+    return view('backend.index');
+});
