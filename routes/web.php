@@ -80,5 +80,9 @@ Route::get('frontend', function() {
 });
 
 Route::get('backend', function() {
-    return view('backend.index');
+    $data =[
+        "name" => "busra",
+        "surname" => "soft"
+    ];
+    return view('backend.index', compact('data'));
 });
