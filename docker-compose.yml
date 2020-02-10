@@ -1,0 +1,40 @@
+version: '2.3'
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: elaravel
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Do201911
+
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    depends_on:
+      - mysqldb
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8282:80
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    PMA_HOST: mysqldb
+
+  web:
+    container_name: web
+    domainname: webdev.jawahr.com
+    tty: true
+    image: bitnami/laravel:6-debian-9
+    ports:
+      - 8181:8181
+    env_file:
+      - .dockerenv
+    volumes:
+      - ./:/app
+    command: bash -c 'php artisan serve --host 0.0.0.0:8181'
