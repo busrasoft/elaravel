@@ -21,5 +21,8 @@
     @br
   Number :  {{ $number }}
 
+@custom(hr)
+  @php($sayi=5)
+{{$sayi==4 ? 'sayi 5 e esittir' : 'sayi 5 e esit degil'}}
 
 @endsection
