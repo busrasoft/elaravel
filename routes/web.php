@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -73,7 +73,7 @@ Route::group(['namespace'=>'Backend'],function(){
 });
 
 
-Route::get('/product', 'Frontend\ProductController@index');
+//Route::get('/product', 'Frontend\ProductController@index');
 
 Route::get('frontend', function() {
     return view('frontend.index');
@@ -85,4 +85,12 @@ Route::get('backend', function() {
         "surname" => "soft"
     ];
     return view('backend.index', compact('data'));
+});
+
+Route::get('app', function () {
+    return view('index');
+});
+
+Route::get('contact', function(){
+    return view('contact');
 });
