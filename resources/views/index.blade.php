@@ -3,4 +3,8 @@
 @section('title','index sayfasi')
 @section('content')
     <h1>here is content in index</h1>
+
+    computer @br hardware
+    @addName(user)
+    @custom(hr)
 @endsection
