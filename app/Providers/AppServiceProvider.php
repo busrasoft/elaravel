@@ -35,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('custom', function($arg){
             return "<".$arg.">";
         });
+
+        Blade::directive('test', function(){
+          return  "<hr style=\"border-color:pink\">";
+        });
     }
 }
