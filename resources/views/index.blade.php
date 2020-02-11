@@ -7,4 +7,19 @@
     computer @br hardware
     @addName(user)
     @custom(hr)
+
+    @php
+        $number=5;
+    @endphp
+    @if ($number>5)
+    Number is greater than 5
+    @elseif($number<5)
+    Number is less than 5
+    @else
+    Number is equal 5
+    @endif
+    @br
+  Number :  {{ $number }}
+
+
 @endsection
