@@ -17,7 +17,7 @@
                 <input class="form-control" type="text" name="course_content" placeholder="Content">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="course_must" placeholder="Must">
+                <input class="form-control" type="number" name="course_must" placeholder="Must">
             </div>
             <input class="form-control" type="submit" value="Kaydet">
         </form>
