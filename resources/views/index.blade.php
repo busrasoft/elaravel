@@ -59,4 +59,30 @@
 @foreach ($arr as $key)
     {{$key}}
 @endforeach
+@test()
+
+    
+
+
+@php($saydir = 0)
+@while ($saydir<10)
+    {{$saydir}}
+    @php($saydir++)
+@endwhile
+
+
+@forelse ($arr as $key)
+    <li>{{$key}}</li>
+    @empty
+    yok
+@endforelse
+@test()
+
+@php ($num=['one', 'two', 'three', 'four'])
+@foreach ($num as $n)
+    @if ($n=="three")
+        @continue
+    @endif
+    {{$n}}
+@endforeach
 @endsection
