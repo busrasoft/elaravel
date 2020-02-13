@@ -95,4 +95,4 @@ Route::get('contact', function(){
     return view('contact');
 });
 
-Route::get('work','WorkController@index');
+Route::any('work','WorkController@index');
