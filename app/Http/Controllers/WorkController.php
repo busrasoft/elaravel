@@ -14,8 +14,18 @@ class WorkController extends Controller
     public function index()
     {
         return view('work');
-    }
+    } 
+    public function workInsert(Request $request){
+       //return $request->all();
+       //return $request->input();
+      // echo $request->input('course_title');echo "<br>";
+      // echo $request->input('course_content');echo "<br>";
+      // echo $request->input('course_must');
+       echo $request->course_title; echo "<br>";
+       echo $request->course_content; echo "<br>";
+       echo $request->course_must; echo "<br>";
 
+    }
     /**
      * Show the form for creating a new resource.
      *

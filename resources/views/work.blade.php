@@ -8,7 +8,7 @@
    
     <div class="col-md-6">
         <h2>Kurs Ekle</h2>
-        <form method="POST">
+        <form action="{{route('workInsert')}}" method="POST">
             <div class="form-group">
                 @csrf
                 <input class="form-control" type="text" name="course_title" placeholder="Title">

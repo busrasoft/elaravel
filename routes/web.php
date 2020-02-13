@@ -96,3 +96,4 @@ Route::get('contact', function(){
 });
 
 Route::any('work','WorkController@index');
+Route::post('workInsert','WorkController@workInsert')->name('workInsert');
