@@ -94,3 +94,5 @@ Route::get('app', function () {
 Route::get('contact', function(){
     return view('contact');
 });
+
+Route::get('work','WorkController@index');
