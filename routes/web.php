@@ -112,6 +112,6 @@ Route::any('workInsert','WorkController@workInsert')->name('workInsert');
 
 Route::get('collection',function(){
     $collection=collect([1,2,3,4,5]);
-    return $collection->max();
+    return $collection->min();
 
 });
