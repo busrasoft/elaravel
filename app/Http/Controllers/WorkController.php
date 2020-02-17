@@ -32,14 +32,16 @@ class WorkController extends Controller
         // echo 'get metodu';
     //    return $request->except(['course_title']); //without course_title
     //    return $request->only(['_token', 'course_title']); 
-       if($request->filled('course_title')) //formda deger var mi filled ile anlasilir
+
+        $request->flash(); //formun icindeki verilerin form eksik gonderildiginde silinmesini onluyor
+        if($request->filled('course_title')) //formda deger var mi filled ile anlasilir
        {
-           echo 'Deger var';
+           $request->all();
         }
         else{
-            echo 'deger yok';
+            return back(); // form bosken ayni sayfaya geri donderme islemi yapiyor.
         }
-   }
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -11,13 +11,13 @@
         <form action="{{route('workInsert')}}" method="POST">
             <div class="form-group">
                 @csrf
-                <input class="form-control" type="text" name="course_title" placeholder="Title">
+                <input class="form-control" type="text" value="{{old('course_title')}}" name="course_title" placeholder="Title">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="course_content" placeholder="Content">
+                <input class="form-control" type="text" value="{{old('course_content')}}" name="course_content" placeholder="Content">
             </div>
             <div class="form-group">
-                <input class="form-control" type="number" name="course_must" placeholder="Must">
+                <input class="form-control" type="number" value="{{old('course_must')}}" name="course_must" placeholder="Must">
             </div>
             <input class="form-control" type="submit" value="Kaydet">
         </form>
