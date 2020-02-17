@@ -8,6 +8,15 @@
    
     <div class="col-md-6">
         <h2>Kurs Ekle</h2>
+
+            <p>
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{session('status')}}
+                </div>
+                @endif
+                </p>
+    
         <form action="{{route('workInsert')}}" method="POST">
             @csrf
             <div class="form-group">               

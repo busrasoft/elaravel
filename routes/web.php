@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/work'); //direk yonlendirme
+    return redirect(route('/courseGet')); //direk yonlendirme
 });
 
 // Route::get('/', function () {
