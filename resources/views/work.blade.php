@@ -9,8 +9,11 @@
     <div class="col-md-6">
         <h2>Kurs Ekle</h2>
         <form action="{{route('workInsert')}}" method="POST">
-            <div class="form-group">
-                @csrf
+            @csrf
+            <div class="form-group">               
+                <input class="form-control" type="file"  name="course_file" enctype="multipart/form-data">
+            </div>
+            <div class="form-group">               
                 <input class="form-control" type="text" value="{{old('course_title')}}" name="course_title" placeholder="Title">
             </div>
             <div class="form-group">
