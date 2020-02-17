@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Response;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,5 +40,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('test', function(){
           return  "<hr style=\"border-color:pink\">";
         });
+        Response::macro('HomeMessage', function($arg){
+            return  Response::make('505 bilgi '.strtoupper($arg));
+          });
     }
 }

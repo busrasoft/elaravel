@@ -10,10 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return response()->download('download/file.txt'); //direk indirme
+    return response()->HomeMessage('merhaba'); 
 });
+
+// Route::get('/', function () {
+//     return response()->download('download/file.txt'); //direk indirme
+// });
 
 // Route::get('/', function () {
 //     return response('busra')->header('Content-Type','text-plain'); //text gorunumu
