@@ -44,7 +44,14 @@ class WorkController extends Controller
         // $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendi[inde silin        mez
         // $request->flashExcept('course_content'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinir
       
-            return $request->file('course_file');
+        //    return $request->file('course_file');
+            if($request->hasFile('course_file'))
+            {
+                echo 'calisti';
+            }
+            else{
+                return back();
+            }
 
         }
     /**
