@@ -41,7 +41,9 @@ class WorkController extends Controller
     //     else{
     //         return back(); // form bosken ayni sayfaya geri donderme islemi yapiyor.
     //     }
-            $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinmez
+            // $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinmez
+            $request->flashExcept('course_content'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinir
+      
             return back();
 
     }
