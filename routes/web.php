@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response('busra')->header('Content-Type','text-plain'); //text gorunumu
 });
+
+// Route::get('/', function () {
+//     return response('busra')->header('Content-Type','application/pdf'); //pdf gorunumu
+// });
 
 Route::get('newpage', function() {
     return view('newpage');
