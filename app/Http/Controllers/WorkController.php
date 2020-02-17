@@ -16,37 +16,37 @@ class WorkController extends Controller
         return view('work');
     }
     public function workInsert(Request $request){
-       //return $request->all();
-       //return $request->input();
-      // echo $request->input('course_title');    echo "<br>";
-      // echo $request->input('course_content');  echo "<br>";
-      // echo $request->input('course_must');
-    //   echo $request->course_must; echo "<br>";
-    //   echo $request->course_content; echo "<br>";
-    //   echo $request->course_must; echo "<br>";
+        //return $request->all();
+        //return $request->input();
+        // echo $request->input('course_title');    echo "<br>";
+        // echo $request->input('course_content');  echo "<br>";
+        // echo $request->input('course_must');
+        //   echo $request->course_must; echo "<br>";
+        //   echo $request->course_content; echo "<br>";
+        //   echo $request->course_must; echo "<br>";
         // echo $request->url();
         // if($request->isMethod('post')){
         //     echo 'post metodu';
         // }
         // else
         // echo 'get metodu';
-    //    return $request->except(['course_title']); //without course_title
-    //    return $request->only(['_token', 'course_title']); 
+        // return $request->except(['course_title']); //without course_title
+        // return $request->only(['_token', 'course_title']); 
 
-    //     $request->flash(); //formun icindeki verilerin form eksik gonderildiginde silinmesini onluyor
-    //     if($request->filled('course_title')) //formda deger var mi filled ile anlasilir
-    //    {
-    //        $request->all();
-    //     }
-    //     else{
-    //         return back(); // form bosken ayni sayfaya geri donderme islemi yapiyor.
-    //     }
-            // $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinmez
-            // $request->flashExcept('course_content'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinir
+        //  $request->flash(); //formun icindeki verilerin form eksik gonderildiginde silinmesini onluyor
+        //  if($request->filled('course_title')) //formda deger var mi filled ile anlasilir
+        // {
+        //        $request->all();
+        //  }
+        //  else{
+        //      return back(); // form bosken ayni sayfaya geri donderme islemi yapiyor.
+        //       }
+        // $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendi[inde silin        mez
+        // $request->flashExcept('course_content'); //sadece burada yazili kisimlar sayfa yenilendi[inde silinir
       
             return $request->file('course_file');
 
-    }
+        }
     /**
      * Show the form for creating a new resource.
      *
