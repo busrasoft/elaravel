@@ -111,7 +111,7 @@ Route::any('workInsert','WorkController@workInsert')->name('workInsert');
 
 
 Route::get('collection',function(){
-    $collection=collect([1,2,3,4,5]);
-    return $collection->diff(3);
+    $collection=collect([1,2,3,4,1]);
+    return $collection->duplicates();
 
 });
