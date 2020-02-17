@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return response('busra')->header('Content-Type','text-plain'); //text gorunumu
+    return redirect('/work'); //direk yonlendirme
 });
+
+// Route::get('/', function () {
+//     return response('busra')->header('Content-Type','text-plain'); //text gorunumu
+// });
 
 // Route::get('/', function () {
 //     return response('busra')->header('Content-Type','application/pdf'); //pdf gorunumu
