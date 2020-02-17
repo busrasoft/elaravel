@@ -14,18 +14,32 @@ class WorkController extends Controller
     public function index()
     {
         return view('work');
-    } 
+    }
     public function workInsert(Request $request){
        //return $request->all();
        //return $request->input();
-      // echo $request->input('course_title');echo "<br>";
-      // echo $request->input('course_content');echo "<br>";
+      // echo $request->input('course_title');    echo "<br>";
+      // echo $request->input('course_content');  echo "<br>";
       // echo $request->input('course_must');
-       echo $request->course_title; echo "<br>";
-       echo $request->course_content; echo "<br>";
-       echo $request->course_must; echo "<br>";
-
-    }
+    //   echo $request->course_must; echo "<br>";
+    //   echo $request->course_content; echo "<br>";
+    //   echo $request->course_must; echo "<br>";
+        // echo $request->url();
+        // if($request->isMethod('post')){
+        //     echo 'post metodu';
+        // }
+        // else
+        // echo 'get metodu';
+    //    return $request->except(['course_title']); //without course_title
+    //    return $request->only(['_token', 'course_title']); 
+       if($request->filled('course_title')) //formda deger var mi filled ile anlasilir
+       {
+           echo 'Deger var';
+        }
+        else{
+            echo 'deger yok';
+        }
+   }
     /**
      * Show the form for creating a new resource.
      *
