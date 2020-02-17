@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect(route('/courseGet')); //direk yonlendirme
+    return response()->download('download/file.txt'); //direk indirme
 });
 
 // Route::get('/', function () {
