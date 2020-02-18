@@ -52,12 +52,17 @@ class WorkController extends Controller
             //     return back()->with('status','Dosya eklemeyi mi unuttun');
             // }
 
-        $validatedData=$request->validate([
-            'course_title' => 'required|min:5'
-        ]);
-        return $request->all();
+        // $validatedData=$request->validate([
+        //     'course_title' => 'required|min:5'
+        // ]);
+        // return $request->all();
 
-
+            $validator=Validator::make($request->all(),[
+                'course_title'=>'required'
+            ])->validate(); //buradaki validate sayfaya geri döndertiyor
+                if($validator->fails()){
+                    return "Dogrulama hatasi";
+                }
         }
     /**
      * Show the form for creating a new resource.
