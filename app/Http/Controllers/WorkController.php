@@ -94,10 +94,17 @@ class WorkController extends Controller
             //     'course_confirm'=>'accepted',
             // ])->validate(); 
         
+            // $validator = Validator::make($request->all(), [
+            //     'course_title'=>'required', 
+            //     'course_date'=>'after:2/18/2020', // girilen tarihten once veya sonrasini kabul eder after/ before
+            //     'course_content'=>'required',
+            //     'course_confirm'=>'accepted',
+            // ])->validate(); 
+
             $validator = Validator::make($request->all(), [
                 'course_title'=>'required', 
-                'course_date'=>'after:2/18/2020', // girilien tarihten once veya sonrasini kabul eder after/ before
-                'course_content'=>'required',
+                'course_date'=>'after:2/18/2020', // girilen tarihten once veya sonrasini kabul eder after/ before
+                'course_content'=>'email|rfc,dns', //mail adresini dns baglantisini kontrol ederek mail adresinin gecerli olup olmadigini kontrol ediyo
                 'course_confirm'=>'accepted',
             ])->validate(); 
 
