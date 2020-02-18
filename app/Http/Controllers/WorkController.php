@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-
+use Validator;
 class WorkController extends Controller
 {
     /**
@@ -45,12 +45,18 @@ class WorkController extends Controller
         // $request->flashOnly('course_content','course_title'); //sadece burada yazili kisimlar sayfa yenilendiginde silinmez
         // $request->flashExcept('course_content'); //sadece burada yazili kisimlar sayfa yenilendiginde silinir
         // return $request->file('course_file');
-            if($request->hasFile('course_file'))
-            {
-                echo 'calisti';
-            } else {
-                return back()->with('status','Dosya eklemeyi mi unuttun');
-            }
+            // if($request->hasFile('course_file'))
+            // {
+            //     echo 'calisti';
+            // } else {
+            //     return back()->with('status','Dosya eklemeyi mi unuttun');
+            // }
+
+        $validatedData=$request->validate([
+            'course_title' => 'required|min:5'
+        ]);
+        return $request->all();
+
 
         }
     /**
