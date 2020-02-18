@@ -57,12 +57,25 @@ class WorkController extends Controller
         // ]);
         // return $request->all();
 
+            // $validator=Validator::make($request->all(),[
+            //     'course_title'=>'required'
+            // ])->validate(); //buradaki validate sayfaya geri döndertiyor
+            //     if($validator->fails()){
+            //         return "Dogrulama hatasi";
+            //     }
+        
+        
             $validator=Validator::make($request->all(),[
                 'course_title'=>'required'
-            ])->validate(); //buradaki validate sayfaya geri döndertiyor
-                if($validator->fails()){
-                    return "Dogrulama hatasi";
-                }
+            ]);
+            $validator->after(function($validator){
+                $validator->errors()->add('dikkat',"dahil etsene ya ");
+            })->validate(); //buradaki validate sayfaya geri döndertiyor
+        
+        
+        
+        
+        
         }
     /**
      * Show the form for creating a new resource.
