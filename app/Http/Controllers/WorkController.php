@@ -88,12 +88,19 @@ class WorkController extends Controller
             // ], $messages)->validate(); //buradaki validate sayfaya geri döndertiyor
         
         
+            // $validator = Validator::make($request->all(), [
+            //     'course_title'=>'required|active_url', //sadece url kabul ediyor
+            //     'course_content'=>'required',
+            //     'course_confirm'=>'accepted',
+            // ])->validate(); 
+        
             $validator = Validator::make($request->all(), [
-                'course_title'=>'required|active_url', //sadece url kabul ediyor
+                'course_title'=>'required', 
+                'course_date'=>'after:2/18/2020', // girilien tarihten once veya sonrasini kabul eder after/ before
                 'course_content'=>'required',
                 'course_confirm'=>'accepted',
             ])->validate(); 
-        
+
         }
     /**
      * Show the form for creating a new resource.
