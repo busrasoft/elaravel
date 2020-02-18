@@ -10,22 +10,22 @@
         <h2>Kurs Ekle</h2>
         {{-- <p>{{$errors->first ()}}</p> --}}
         {{-- <p>{{$errors->first ('course_content')}}</p> --}}
-
+{{-- 
         <p>
             @if ($errors->has('course_content'))
                 <b>Content bos kalmis : </b>
                 {{$errors->first ('course_content')}}
             @endif
-        </p>
+        </p> --}}
 
 
-        {{-- @if ($errors->any())
+        @if ($errors->any())
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
                 @endforeach
             </ul>
-        @endif --}}
+        @endif
 
         {{-- <p>
             @if (session('status'))

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\Age;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Validator;
@@ -77,16 +78,21 @@ class WorkController extends Controller
             //     'course_content'=>'required',
             // ])->validate(); //buradaki validate sayfaya geri döndertiyor
         
-            $messages=[
-                'required'=>'Zorunlu alan :attribute',
-                'min'=>'En kucuk deger :attribute'
-            ];
+            // $messages=[
+            //     'required'=>'Zorunlu alan :attribute',
+            //     'min'=>'En kucuk deger :attribute'
+            // ];
+            // $validator = Validator::make($request->all(), [
+            //     'course_title'=>'required',
+            //     'course_content'=>'required|min:9'
+            // ], $messages)->validate(); //buradaki validate sayfaya geri döndertiyor
+        
+        
             $validator = Validator::make($request->all(), [
-                'course_title'=>'required',
-                'course_content'=>'required|min:9'
-            ], $messages)->validate(); //buradaki validate sayfaya geri döndertiyor
-        
-        
+                'course_title'=>'required|active_url', //sadece url kabul ediyor
+                'course_content'=>'required',
+                'course_confirm'=>'accepted',
+            ])->validate(); 
         
         }
     /**
