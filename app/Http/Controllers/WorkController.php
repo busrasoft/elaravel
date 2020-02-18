@@ -65,14 +65,26 @@ class WorkController extends Controller
             //     }
         
         
-            $validator=Validator::make($request->all(),[
-                'course_title'=>'required'
-            ]);
-            $validator->after(function($validator){
-                $validator->errors()->add('dikkat',"dahil etsene ya ");
-            })->validate(); //buradaki validate sayfaya geri döndertiyor
+            // $validator=Validator::make($request->all(),[
+            //     'course_title'=>'required'
+            // ]);
+            // $validator->after(function($validator){
+            //     $validator->errors()->add('dikkat',"dahil etsene ya ");
+            // })->validate(); //buradaki validate sayfaya geri döndertiyor
         
+            // $validator=Validator::make($request->all(),[
+            //     'course_title'=>'required',
+            //     'course_content'=>'required',
+            // ])->validate(); //buradaki validate sayfaya geri döndertiyor
         
+            $messages=[
+                'required'=>'Zorunlu alan :attribute',
+                'min'=>'En kucuk deger :attribute'
+            ];
+            $validator = Validator::make($request->all(), [
+                'course_title'=>'required',
+                'course_content'=>'required|min:9'
+            ], $messages)->validate(); //buradaki validate sayfaya geri döndertiyor
         
         
         

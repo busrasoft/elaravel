@@ -8,20 +8,32 @@
    
     <div class="col-md-6">
         <h2>Kurs Ekle</h2>
-        @if ($errors->any())
+        {{-- <p>{{$errors->first ()}}</p> --}}
+        {{-- <p>{{$errors->first ('course_content')}}</p> --}}
+
+        <p>
+            @if ($errors->has('course_content'))
+                <b>Content bos kalmis : </b>
+                {{$errors->first ('course_content')}}
+            @endif
+        </p>
+
+
+        {{-- @if ($errors->any())
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
                 @endforeach
             </ul>
-        @endif
-        <p>
+        @endif --}}
+
+        {{-- <p>
             @if (session('status'))
             <div class="alert alert-success">
                 {{session('status')}}
             </div>
             @endif
-        </p>
+        </p> --}}
     
         <form action="{{route('workInsert')}}" method="POST">
             @csrf
