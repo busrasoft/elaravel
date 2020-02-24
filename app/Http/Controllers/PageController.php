@@ -95,10 +95,20 @@ Class PageController extends Controller
 //    ->doesntExist(); // id degeri 5 olan data yok mu  var mi :)
 //       dd($blog);
 
+// $blog=DB::table('blog')
+// ->select('id','blog_title')
+// ->get(); // butun datalarin id ve blog title getirir
+//    dd($blog);
+
 $blog=DB::table('blog')
-->select('id','blog_title')
-->get(); // butun datalarin id ve blog title getirir
-   dd($blog);
+->select('blog_title as baslik') // veritabanindan cekilen sutunun adini degistirir.
+->get();
+   foreach ($blog as $key) {
+       echo $key->baslik."<br>";
+   }
+
+
+
 
     }
 
