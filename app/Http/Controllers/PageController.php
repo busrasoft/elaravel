@@ -7,7 +7,9 @@ Class PageController extends Controller
     public function index()
     {
         $blog=DB::table('blog')->get(); //veri tabanindan verileri getirme
-        dd($blog);
+        foreach ($blog as $key ) {
+            echo $key->blog_title."<br>";
+        }
     }
 
     public function show(){
