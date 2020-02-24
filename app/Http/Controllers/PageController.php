@@ -26,8 +26,7 @@ Class PageController extends Controller
     //    dd($blog);
        
     $blog=DB::table('blog')
-    ->whereBetween('blog_id',[4,7]) //blog id si 4 ile 7 arasinda olanlari getir
-    
+    ->whereBetween('blog_id',[1,5]) //blog id si 1 ile 4 olanlari getir   
     ->get(); // data get from Database
    dd($blog);
 
