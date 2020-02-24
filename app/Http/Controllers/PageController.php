@@ -6,7 +6,7 @@ Class PageController extends Controller
 {
     public function index()
     {
-        $blog=DB::table('blog')->get();
+        $blog=DB::table('blog')->get(); //veri tabanindan verileri getirme
         dd($blog);
     }
 
