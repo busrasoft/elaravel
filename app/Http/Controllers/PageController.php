@@ -58,12 +58,19 @@ Class PageController extends Controller
 // $blog=DB::table('blog')
 //     ->whereDate('blog_date','2020-01-24') //blog date kismi ayni olan tarihleri getirir, 
 //     ->get(); // data get from Database
+// //    dd($blog);
+
+// $blog=DB::table('blog')
+//     ->whereMonth('blog_date','1') //blog date kismi 1. ay olan tarihlerdeki veriyi getirir, 
+//     ->get(); // data get from Database
 //    dd($blog);
 
 $blog=DB::table('blog')
-    ->whereMonth('blog_date','1') //blog date kismi 1. ay olan tarihlerdeki veriyi getirir, 
+    ->whereDay('blog_date','24') //blog date kismi gunleri 24. olan tarihlerdeki veriyi getirir, 
     ->get(); // data get from Database
    dd($blog);
+
+
 
     }
 
