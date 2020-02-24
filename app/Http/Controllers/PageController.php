@@ -90,11 +90,15 @@ Class PageController extends Controller
 // ->exists(); // id degeri 5 olan data var mi yok mu  
 //    echo $blog;
 
-   $blog=DB::table('blog')
-   ->where('id','5')
-   ->doesntExist(); // id degeri 5 olan data yok mu  var mi :)
-      dd($blog);
+//    $blog=DB::table('blog')
+//    ->where('id','5')
+//    ->doesntExist(); // id degeri 5 olan data yok mu  var mi :)
+//       dd($blog);
 
+$blog=DB::table('blog')
+->select('id','blog_title')
+->get(); // butun datalarin id ve blog title getirir
+   dd($blog);
 
     }
 
