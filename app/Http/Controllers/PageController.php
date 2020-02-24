@@ -45,11 +45,15 @@ Class PageController extends Controller
 //     ->get(); // data get from Database
 //    dd($blog);
 
+// $blog=DB::table('blog')
+//     ->whereNull('blog_title') //blog title kismi bos olanlari getirir, 
+//     ->get(); // data get from Database
+//    dd($blog);
+
 $blog=DB::table('blog')
-    ->whereNull('blog_title') //blog title kismi bos olanlari getirir, 
+    ->whereNotNull('blog_title') //blog title kismi bos olmayanlari getirir, 
     ->get(); // data get from Database
    dd($blog);
-
 
     }
 
