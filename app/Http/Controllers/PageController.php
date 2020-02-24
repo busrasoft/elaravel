@@ -50,10 +50,16 @@ Class PageController extends Controller
 //     ->get(); // data get from Database
 //    dd($blog);
 
+// $blog=DB::table('blog')
+//     ->whereNotNull('blog_title') //blog title kismi dolu olanlari getirir, 
+//     ->get(); // data get from Database
+//    dd($blog);
+
 $blog=DB::table('blog')
-    ->whereNotNull('blog_title') //blog title kismi bos olmayanlari getirir, 
+    ->whereDate('blog_date','2020-01-24') //blog date kismi ayni olan tarihleri getirir, 
     ->get(); // data get from Database
    dd($blog);
+
 
     }
 
