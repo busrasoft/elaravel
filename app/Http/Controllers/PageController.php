@@ -65,11 +65,13 @@ Class PageController extends Controller
 //     ->get(); // data get from Database
 //    dd($blog);
 
-$blog=DB::table('blog')
-    ->whereDay('blog_date','24') //blog date kismi gunleri 24. olan tarihlerdeki veriyi getirir, 
-    ->get(); // data get from Database
-   dd($blog);
+// $blog=DB::table('blog')
+//     ->whereDay('blog_date','24') //blog date kismi gunleri 24. olan tarihlerdeki veriyi getirir, 
+//     ->get(); // data get from Database
+//    dd($blog);
 
+$blog=DB::table('blog')->find(5); // data find id 5 from Database
+   dd($blog);
 
 
     }
