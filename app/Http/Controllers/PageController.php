@@ -73,10 +73,11 @@ Class PageController extends Controller
 // $blog=DB::table('blog')->find(5); // data find id 5 from Database
 //    dd($blog);
 
-$blog=DB::table('blog')->pluck('blog_content'); // all datas bring the blog_content 
-   dd($blog);
+// $blog=DB::table('blog')->pluck('blog_content'); // all datas bring the blog_content 
+//    dd($blog);
 
-
+$blog=DB::table('blog')->count(); // data sayisini verir
+   echo $blog;
 
 
 
