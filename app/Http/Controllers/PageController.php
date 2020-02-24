@@ -85,11 +85,15 @@ Class PageController extends Controller
 // $blog=DB::table('blog')->min('blog_must'); // max data degerini verir
 //    echo $blog;
 
-$blog=DB::table('blog')
-->where('id','5')
-->exists(); // id degeri 5 olan data var mi yok mu  
-   echo $blog;
+// $blog=DB::table('blog')
+// ->where('id','5')
+// ->exists(); // id degeri 5 olan data var mi yok mu  
+//    echo $blog;
 
+   $blog=DB::table('blog')
+   ->where('id','5')
+   ->doesntExist(); // id degeri 5 olan data yok mu  var mi :)
+      dd($blog);
 
 
     }
