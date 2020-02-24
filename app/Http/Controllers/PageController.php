@@ -76,10 +76,14 @@ Class PageController extends Controller
 // $blog=DB::table('blog')->pluck('blog_content'); // all datas bring the blog_content 
 //    dd($blog);
 
-$blog=DB::table('blog')->count(); // data sayisini verir
+// $blog=DB::table('blog')->count(); // data sayisini verir
+//    echo $blog;
+
+// $blog=DB::table('blog')->max('blog_must'); // max data degerini verir
+//    echo $blog;
+
+$blog=DB::table('blog')->min('blog_must'); // max data degerini verir
    echo $blog;
-
-
 
     }
 
