@@ -107,13 +107,20 @@ Class PageController extends Controller
 //        echo $key->baslik."<br>";
 //    }
 
+// $blog=DB::table('user')
+// ->join('blog','blog.user_id','=','user.id')    //iki tabloyu join islemi ile birlestirdik
+// ->get();
+// foreach ($blog as $key) {
+//     echo $key->user_name.' => '.$key->blog_title.'<br>';
+// }
+
 $blog=DB::table('user')
 ->join('blog','blog.user_id','=','user.id')    //iki tabloyu join islemi ile birlestirdik
+->where('user.id',4)   //bunlarin icinde user_id si 4 olanlari sectik
 ->get();
 foreach ($blog as $key) {
     echo $key->user_name.' => '.$key->blog_title.'<br>';
 }
-
 
 
 
