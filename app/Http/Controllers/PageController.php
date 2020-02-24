@@ -100,12 +100,19 @@ Class PageController extends Controller
 // ->get(); // butun datalarin id ve blog title getirir
 //    dd($blog);
 
-$blog=DB::table('blog')
-->select('blog_title as baslik') // veritabanindan cekilen sutunun adini degistirir.
+// $blog=DB::table('blog')
+// ->select('blog_title as baslik') // veritabanindan cekilen sutunun adini degistirir.
+// ->get();
+//    foreach ($blog as $key) {
+//        echo $key->baslik."<br>";
+//    }
+
+$blog=DB::table('user')
+->join('blog','blog.user_id','=','user.id')    //iki tabloyu join islemi ile birlestirdik
 ->get();
-   foreach ($blog as $key) {
-       echo $key->baslik."<br>";
-   }
+foreach ($blog as $key) {
+    echo $key->user_name.' => '.$key->blog_title.'<br>';
+}
 
 
 
