@@ -18,13 +18,22 @@ Class PageController extends Controller
         // echo '<br>';
         // echo $blog->blog_content;
         
-        $blog=DB::table('blog')
-        ->where('blog_id',2) //blog id si 2 olanlari getir
-        ->orwhere('blog_id',3) //blog id si 3 olanlari getir
-        ->orwhere('blog_id',4) //blog id si 4 olanlari getir
-        ->get(); // data get from Database
-       dd($blog);
-        
+    //     $blog=DB::table('blog')
+    //     ->where('blog_id',2) //blog id si 2 olanlari getir
+    //     ->orwhere('blog_id',3) //blog id si 3 olanlari getir
+    //     ->orwhere('blog_id',4) //blog id si 4 olanlari getir
+    //     ->get(); // data get from Database
+    //    dd($blog);
+       
+    $blog=DB::table('blog')
+    ->whereBetween('blog_id',[4,7]) //blog id si 4 ile 7 arasinda olanlari getir
+    
+    ->get(); // data get from Database
+   dd($blog);
+
+
+
+
     }
 
     public function show(){
