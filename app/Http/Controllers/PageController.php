@@ -35,10 +35,17 @@ Class PageController extends Controller
 //     ->get(); // data get from Database
 //    dd($blog);
 
+// $blog=DB::table('blog')
+//     ->whereIn('blog_id',[4,7]) //blog id si sadece 4 ile 7 olanlari getirir, yani 4 ve 7 geldi
+//     ->get(); // data get from Database
+//    dd($blog);
+
 $blog=DB::table('blog')
-    ->whereIn('blog_id',[4,7]) //blog id si sadece 4 ile 7 olanlari getiriri, yani 4 ve 7 geldi
+    ->whereNotIn('blog_id',[4,7]) //blog id si sadece 4 ile 7 olanmayanlari getirir, yani 1,2,3,5,6,8 geldi
     ->get(); // data get from Database
    dd($blog);
+
+
 
     }
 
