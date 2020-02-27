@@ -140,13 +140,40 @@ Class PageController extends Controller
 //     echo  $key->id.' - '. $key->user_name.'<br>';
 //     }
 
-$blog=DB::table('user')
-->orderBy('id', 'DESC')
-->offset(2) //buradaki sayi kadar kaydi GEC Atla
-->limit(1) //buradaki sayi kadar kaydi getir
-->get();
-dd($blog);
+// $blog=DB::table('user')
+// ->orderBy('id', 'DESC')
+// ->offset(2) //buradaki sayi kadar kaydi GEC Atla
+// ->limit(1) //buradaki sayi kadar kaydi getir
+// ->get();
+// dd($blog);
+// }
+
+// $blog=DB::table('blog')->insert(
+//     [
+//         [
+//         'blog_title' => 'Blog Title 12',
+//         'blog_content' => 'Blog Title 12',
+//         'blog_must' => 12,
+//         ],
+//         [
+//         'blog_title' => 'Blog Title 13',
+//         'blog_content' => 'Blog Title 13',
+//         'blog_must' => 13 ,
+//         ]
+//     ]
+// );
+// echo $blog;
+// }
+    
+$blog=DB::table('blog')->insertGetId(  //eklenen son degerin id verir
+    [
+    'blog_title' => 'Blog Title 14',
+    'blog_content' => 'Blog Title 14',
+    'blog_must' => 14,
+    ]
+);
+echo $blog;
 }
 
-    
+ 
 }
