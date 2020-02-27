@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 Class PageController extends Controller
 {
@@ -10,6 +11,10 @@ Class PageController extends Controller
 
     public function index()
     {
+        if (Schema::hasTable('blogs')) {
+            echo "bu tablonun varlik kontrolunu yap";
+        }
+
         // $blog=DB::table('blog')->get(); //veri tabanindan verileri getirme
         // foreach ($blog as $key ) {
         //     echo $key->blog_title."<br>";
@@ -212,8 +217,8 @@ Class PageController extends Controller
 // echo $blog;
 // }
 
-$blog=DB::table('blog')
-->truncate();
-echo $blog;
-}
+// $blog=DB::table('blog')
+// ->truncate();
+// echo $blog;
+ }
 }
