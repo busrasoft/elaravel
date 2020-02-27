@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\DB;
 
 Class PageController extends Controller
 {
+    public function show(){
+        echo "show metodu çalıştı";
+    } 
+
     public function index()
     {
         // $blog=DB::table('blog')->get(); //veri tabanindan verileri getirme
@@ -114,19 +118,35 @@ Class PageController extends Controller
 //     echo $key->user_name.' => '.$key->blog_title.'<br>';
 // }
 
+// $blog=DB::table('user')
+// ->join('blog','blog.user_id','=','user.id')    //iki tabloyu join islemi ile birlestirdik
+// ->where('user.id',4)   //bunlarin icinde user_id si 4 olanlari sectik
+// ->get();
+// foreach ($blog as $key) {
+//     echo $key->user_name.' => '.$key->blog_title.'<br>';
+// }
+
+// $blog=DB::table('user')
+// ->orderBy('id', 'asc') //DESC tersten siralama ASC siralama
+// ->get();
+// foreach ($blog as $key) {
+//     echo  $key->id.' - '. $key->user_name.'<br>';
+//     }
+
+// $blog=DB::table('user')
+// ->inRandomOrder() //inRandomOrder restgele siralama 
+// ->get();
+// foreach ($blog as $key) {
+//     echo  $key->id.' - '. $key->user_name.'<br>';
+//     }
+
 $blog=DB::table('user')
-->join('blog','blog.user_id','=','user.id')    //iki tabloyu join islemi ile birlestirdik
-->where('user.id',4)   //bunlarin icinde user_id si 4 olanlari sectik
+->orderBy('id', 'DESC')
+->offset(2) //buradaki sayi kadar kaydi GEC Atla
+->limit(1) //buradaki sayi kadar kaydi getir
 ->get();
-foreach ($blog as $key) {
-    echo $key->user_name.' => '.$key->blog_title.'<br>';
+dd($blog);
 }
 
-
-
-    }
-
-    public function show(){
-        echo "show metodu çalıştı";
-    }
+    
 }
