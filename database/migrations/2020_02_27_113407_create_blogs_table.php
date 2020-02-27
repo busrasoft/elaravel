@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreateBlogsTable extends Migration
 {
@@ -16,6 +17,10 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('blog_email')->unique(); //benzersiz olmali
+            $table->string('blog_title')->nullable(); // bos birakilabilir
+            $table->text('blog_content'); 
+            $table->integer('blog_must')->unsigned(); //pozitif degerin disinda deger kabul etmiyor unsigned
         });
     }
 
