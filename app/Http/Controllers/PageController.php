@@ -11,9 +11,12 @@ Class PageController extends Controller
 
     public function index()
     {
-        if (Schema::hasTable('blogs')) {
-            echo "bu tablonun varlik kontrolunu yap";
-        }
+        Schema::rename('course','new_course'); 
+    }
+
+        // if (Schema::hasTable('blogs')) {
+        //     echo "bu tablonun varlik kontrolunu yap";
+        // }
 
         // $blog=DB::table('blog')->get(); //veri tabanindan verileri getirme
         // foreach ($blog as $key ) {
