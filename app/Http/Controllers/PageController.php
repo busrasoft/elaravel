@@ -165,15 +165,55 @@ Class PageController extends Controller
 // echo $blog;
 // }
     
-$blog=DB::table('blog')->insertGetId(  //eklenen son degerin id verir
-    [
-    'blog_title' => 'Blog Title 14',
-    'blog_content' => 'Blog Title 14',
-    'blog_must' => 14,
-    ]
-);
+// $blog=DB::table('blog')->insertGetId(  //eklenen son degerin id verir
+//     [
+//     'blog_title' => 'Blog Title 14',
+//     'blog_content' => 'Blog Title 14',
+//     'blog_must' => 14,
+//     ]
+// );
+// echo $blog;
+// }
+
+// $blog=DB::table('blog')
+// ->where('id','9')
+// ->update(  //eklenen son degerin id verir
+//     [
+//     'blog_title' => 'Busra Title 9',
+//     'blog_content' => 'Busra content 9',
+//     'blog_must' => 14,
+//     ]
+// );
+// echo $blog;
+// }
+
+// $blog=DB::table('blog')
+// ->updateOrInsert(  //eklenen son degerin id verir
+//     [
+//     'blog_title' => 'Busra Title 15',
+//     'blog_content' => 'Busra Title 15',
+//     'blog_must' => 14,
+//     ]
+// );
+// echo $blog;
+// }
+
+// $blog=DB::table('blog')
+// ->increment('blog_must','9');
+// echo $blog;
+
+// $blog=DB::table('blog')
+// ->decrement('blog_must','9');
+// echo $blog;
+
+// $blog=DB::table('blog')
+// ->where('id','15') //tek tek id ile silme
+// ->delete();
+// echo $blog;
+// }
+
+$blog=DB::table('blog')
+->truncate();
 echo $blog;
 }
-
- 
 }
