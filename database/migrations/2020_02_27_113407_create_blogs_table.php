@@ -17,10 +17,10 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('blog_email')->unique(); //benzersiz olmali
+            $table->string('blog_email')->nullable(); //benzersiz olmali
             $table->string('blog_title')->nullable(); // bos birakilabilir
-            $table->text('blog_content'); 
-            $table->integer('blog_must')->unsigned(); //pozitif degerin disinda deger kabul etmiyor unsigned
+            $table->text('blog_content')->nullable();
+            $table->integer('blog_must')->nullable(); //pozitif degerin disinda deger kabul etmiyor unsigned
         });
     }
 
