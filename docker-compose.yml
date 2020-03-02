@@ -27,11 +27,13 @@ services:
 
   web:
     container_name: web
-    domainname: webdev.jawahr.com
+    domainname: hello.me.com
     tty: true
     image: bitnami/laravel:6-debian-9
     ports:
       - 8181:8181
+    depends_on:
+      - mysqldb
     env_file:
       - .dockerenv
     volumes:
