@@ -224,4 +224,4 @@ Class PageController extends Controller
 // ->truncate();
 // echo $blog;
  }
-}
+
