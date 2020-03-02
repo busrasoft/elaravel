@@ -14,7 +14,7 @@ class BlogTableSeeder extends Seeder
     public function run()
     {
         DB::table('blogs')->insert([
-            ['blog_title'=> Str::random(10),
+            ['blog_title'=> Str::random(10), // rastgele random veri atama
             'blog_content'=> 'Content 3' ],
             ['blog_title'=> Str::random(10),
             'blog_content'=> 'Content 2' ],
